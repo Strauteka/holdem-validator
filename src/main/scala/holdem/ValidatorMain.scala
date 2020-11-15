@@ -317,10 +317,8 @@ object ArgsParser {
   val usage = s"""
     Usage: HoldemValidator 
     [--type=?] <1 - 3> 1=Generate&validate; 2=Calculate; 3=Validate;
-    [--ofile=?] --ofile=<File-path>; Output file;
-                With --type=1 Stores generated results in file + STDOUT;
-                With --type=3 Reads generated calculation results from file + STDIN;
-    [--ifile=?] --ifile=<File-path>;  Static input samples. Used with [--type=1];
+    [--ofile=?] --ofile=<File-path>; Output file; Used with [--type=1] generated results in file + STDOUT
+    [--ifile=?] --ifile=<File-path>;  Static input samples. Used with [--type=1; --type=3];
     [--size=?] Sample size. Used with [--type=1];
     [--hand=?] Players <0-10>; --hand=0 -> Rnd(2-10) Used with [--type=1];
     [--omaha] Hand card count = 4; Used with [--type=1];

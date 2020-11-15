@@ -49,13 +49,13 @@ In Windows with pipes its not so easy. There for I created line pipes as follows
 To get Generated Data you need to specify file where to store/read samples for generator and validator.
 
 Example: `java -jar ./holdem-validator-assembly-0.1.0-SNAPSHOT.jar --size=100 --ofile=data.txt | java -jar ./holdem-validator-assembly-0.1.0-SNAPSHOT.jar --type=2 | java -jar ./holdem-validator-assembly-0.1.0-SNAPSHOT.jar --type=3 --ifile=data.txt`  
-_To work --ofile--ifile option value should match!_
+_To work --ofile--ifile option values should match!_
 
 # Data I/O
 
 Card syntax example:  
 `List("2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A")`  
-multiply by  
+Cartesian product with  
 `List("h", "d", "c", "s")`
 
 Cards `2h 2d 2c 2s 3h 3d...Ac As` = 52 cards.
@@ -84,14 +84,13 @@ In results, hands should be ordered from weakest to strongest values. If Strengt
 
 ## Options
 
-When running program you can add additional options.
+When running program you can add additional options.  
+Default flags if needed: --type=1 --size=10 --hand=5
 
 ```
     [--type=?] <1 - 3> 1=Generate&validate; 2=Calculate; 3=Validate;
-    [--ofile=?] --ofile=<File-path>; Output file;
-                With --type=1 Stores generated results in file + STDOUT;
-                With --type=3 Reads generated calculation results from file + STDIN;
-    [--ifile=?] --ifile=<File-path>;  Static input samples. Used with [--type=1];
+    [--ofile=?] --ofile=<File-path>; Output file; Used with [--type=1] generated results in file + STDOUT
+    [--ifile=?] --ifile=<File-path>; Static input samples. Used with [--type=1; --type=3];
     [--size=?] Sample size. Used with [--type=1];
     [--hand=?] Players <0-10>; --hand=0 -> Rnd(2-10) Used with [--type=1];
     [--omaha] Hand card count = 4; Used with [--type=1];
@@ -200,5 +199,3 @@ Usage in Windows
 `java -jar ./holdem-validator-assembly-0.1.0-SNAPSHOT.jar --size=100 --ofile=data.txt | <your-program-here> | java -jar ./holdem-validator-assembly-0.1.0-SNAPSHOT.jar --type=3 --ifile=data.txt`
 
 # Software created as part of learning Scala
-
-Notify me, if encountered some issues.
