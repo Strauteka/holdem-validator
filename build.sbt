@@ -1,9 +1,9 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.12.12"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+ThisBuild / scalaVersion := "2.12.12"
+ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / organization := "org.js"
+ThisBuild / organizationName := "strauteka"
 
 lazy val root = (project in file("."))
   .settings(
@@ -23,14 +23,14 @@ lazy val root = (project in file("."))
 //     "scm:git@github.com:your-account/your-project.git"
 //   )
 // )
-// ThisBuild / developers := List(
-//   Developer(
-//     id    = "Your identifier",
-//     name  = "Your Name",
-//     email = "your@email",
-//     url   = url("http://your.url")
-//   )
-// )
+ThisBuild / developers := List(
+  Developer(
+    id = "Jānis",
+    name = "Strautiņš",
+    email = "janis.str.89@gmail.com",
+    url = url("https://github.com/Strauteka/")
+  )
+)
 // ThisBuild / pomIncludeRepository := { _ => false }
 // ThisBuild / publishTo := {
 //   val nexus = "https://oss.sonatype.org/"

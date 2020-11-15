@@ -23,7 +23,7 @@ object HoldemValidator {
       }
   }
 
-  private def calculate(rawData: String): Try[Array[HoldemHandScore]] =
+  def calculate(rawData: String): Try[Array[HoldemHandScore]] =
     Try(
       rawData.parseInput.toItems.tail
         .map(e => HoldemHandScore(rawData.toItems.head, e))
@@ -115,8 +115,7 @@ object CardsImplicits {
     def isFlushCards: Boolean =
       cards.map(_.charAt(1)).distinct.length == 1
 
-    /**
-      * @param cardScores input ordered score array low to high
+    /** @param cardScores input ordered score array low to high
       * @return if cards is in sequence, returns reversed input Array
       */
     private def getSequenceScore(cardScores: Array[Int]): Option[Array[Int]] =
@@ -144,8 +143,7 @@ object CardsImplicits {
         case _ => None
       }
 
-    /**
-      * https://www.quora.com/What-is-the-highest-suit-in-poker => Ben Arnold answer
+    /** https://www.quora.com/What-is-the-highest-suit-in-poker => Ben Arnold answer
       * 1. High Card 2. Pair 3. Two Pair 4. Three of a Kind 5.Straight 6.Flush 7.Full
       * House 8. Four of a Kind 9. Straight Flush
       */
